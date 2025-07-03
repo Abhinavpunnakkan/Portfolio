@@ -13,7 +13,7 @@ export default function Projects() {
     },
     {
         title: "Doctor.Ai",
-        img: "/icons/doctor.png",
+        img: "/icons/doctor_compressed.png",
         description: "A machine learning project that predicts the likelihood of diseases based on user symptoms using a trained medical dataset.",
         tags: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Flask", "HTML", "CSS"],
         github: "https://github.com/Abhinavpunnakkan/doctor.ai",
