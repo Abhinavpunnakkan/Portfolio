@@ -18,8 +18,31 @@ export default function Projects() {
         tags: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Flask", "HTML", "CSS"],
         github: "https://github.com/Abhinavpunnakkan/doctor.ai",
         demo: "#",
+    },
+    {
+      title: "Sraven Portfolio",
+      img: "/icons/sraven.png",
+      description: "A personal portfolio website for my friend showcasing their projects and skills.",
+      tags: ["TypeScript", "Tailwind CSS"],
+      github: "https://github.com/Abhinavpunnakkan/Sraven-Portfolio.git",
+      demo: "https://sraven.vercel.app/",
+    },
+    {
+      title: "Global Labs Website",
+      img: "/icons/global-labs.png",
+      description: "A responsive website for Global Labs using TypeScript and TailwindCSS, featuring smooth animations and mobile-first design. Integrated Cloudinary for media storage and WhatsApp booking for seamless appointment scheduling.",
+      tags: ["TypeScript", "Tailwind CSS", "Cloudinary"],
+      github: "https://github.com/Abhinavpunnakkan/Global-Labs.git",
+      demo: "https://globallabs.co.in",
     }
   ];
+
+  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>, demoUrl: string) => {
+    if (!demoUrl || demoUrl === "#" || demoUrl.trim() === "") {
+      e.preventDefault();
+      alert("Sorry, demo is not available yet!");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] py-12 px-4 md:px-8">
@@ -69,7 +92,6 @@ export default function Projects() {
                   ))}
                 </div>
 
-
                 <div className="flex space-x-4">
                   <a
                     href={project.github}
@@ -81,7 +103,9 @@ export default function Projects() {
                   </a>
                   <a
                     href={project.demo}
-                    onClick={() => alert("Sorry, demo is not available yet!")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => handleDemoClick(e, project.demo)}
                     className="flex-1 py-2 px-4 bg-[#3a3a3a] text-white rounded-lg text-center hover:bg-[#4a4a4a] transition-colors"
                   >
                     Live Demo
